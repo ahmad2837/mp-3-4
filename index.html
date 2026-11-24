@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Explorer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <h1>🛍️ Product Explorer</h1>
+    <p>Search, filter and save your favorite products</p>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== Controls: search, filter, sort, favorites ===== -->
+    <section class="controls">
+      <input type="text" id="searchInput" placeholder="Search products by name...">
+
+      <select id="categorySelect">
+        <option value="all">All Categories</option>
+      </select>
+
+      <select id="sortSelect">
+        <option value="default">Sort: Default</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="rating">Top Rated</option>
+      </select>
+
+      <button id="favoritesToggle" class="btn">❤️ Show Favorites (0)</button>
+    </section>
+
+    <!-- ===== Status messages (loading / error / empty) ===== -->
+    <div id="loading" class="status hidden">
+      <div class="spinner"></div>
+      <p>Loading products...</p>
+    </div>
+
+    <div id="error" class="status error hidden">
+      <p id="errorMessage"></p>
+      <button id="retryBtn" class="btn">Try Again</button>
+    </div>
+
+    <div id="empty" class="status hidden">
+      <p>😕 No products found. Try a different search or filter.</p>
+    </div>
+
+    <!-- ===== Result count + product grid (filled by JavaScript) ===== -->
+    <p id="resultCount" class="result-count"></p>
+    <section id="productGrid" class="grid"></section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Data from <a href="https://dummyjson.com" target="_blank">DummyJSON API</a> | MP3-MP4 Project</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

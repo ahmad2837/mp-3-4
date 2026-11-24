@@ -1,0 +1,172 @@
+/* ===== Basic reset and page style ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* ===== Header and footer ===== */
+.header {
+  background: #2b6cb0;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== Controls (search, selects, button) ===== */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.controls input,
+.controls select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.controls input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2b6cb0;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #204f82;
+}
+
+/* Style used when "Show Favorites" is turned on */
+.btn.active {
+  background: #e53e3e;
+}
+
+/* ===== Status boxes: loading, error, empty ===== */
+.status {
+  text-align: center;
+  padding: 40px 10px;
+}
+
+.status.error {
+  color: #c53030;
+}
+
+.status .btn {
+  margin-top: 10px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  border: 4px solid #ddd;
+  border-top-color: #2b6cb0;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* JavaScript adds/removes this class to show or hide elements */
+.hidden {
+  display: none;
+}
+
+.result-count {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* ===== Product grid and cards ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
+
+.card .category {
+  font-size: 13px;
+  color: #777;
+  text-transform: capitalize;
+}
+
+.card .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2b6cb0;
+  margin: 8px 0;
+}
+
+.card .rating {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.fav-btn {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e53e3e;
+  border-radius: 6px;
+  background: white;
+  color: #e53e3e;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Style used when the product is saved as favorite */
+.fav-btn.saved {
+  background: #e53e3e;
+  color: white;
+}
